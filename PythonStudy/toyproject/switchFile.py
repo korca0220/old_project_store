@@ -1,5 +1,10 @@
 import os
-
+class Decorator_test:
+    def __init__(self, f):
+        self.func = f
+    def __call__(self, *args, **kwargs):
+        name = kwargs.get('name')
+        self.func(name)
 class Address_Book:
 
     list_count =0
@@ -24,9 +29,16 @@ class Address_Book:
 
     def print_info(self): #현재까지 저장된 주소록 출력
         for i in Address_Book.list_address:
-            print(i)
+             print(i)
+        @Decorator_test
+        def greet(name):
+            print("Current insert name : {}".format(name))
+        greet(name=Address_Book.list_dict['name'])
     def delete_info(self, index_number): #리스트 삭제
         del Address_Book.list_address[index_number-1]
+
+
+
     #def modify_info(self, index_number, select_attribute):
 
     # def update_info(self):
