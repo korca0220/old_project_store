@@ -1,5 +1,7 @@
+# -*- coding: utf-8 -*-
 import os
 import sys
+
 import product_
 import print_
 import sell_
@@ -9,11 +11,11 @@ if __name__=='__main__':
 
     common_class = common_.Common()
     product_class = product_.Product()
-    print_class = print_.Print_class()
+    print_class = print_.PrintMenu()
     sell_class = sell_.Sell()
     while(1):
         common_class.platformFunction()
-        print_class.menu_print()
+        print_class.print_menu()
         select_menu = input("select POS menu : ")
         if(select_menu == "1"):
             while(select_menu !="5"):
@@ -39,7 +41,7 @@ if __name__=='__main__':
                 elif(select_detail == "5"):
                     break
         elif(select_menu == "2"):
-            common_class.platformFunction()
+            os.system('cls')
             while(1):
                 print_class.sell_menu_print()
                 select_sell = input("Select Sell menu :")
