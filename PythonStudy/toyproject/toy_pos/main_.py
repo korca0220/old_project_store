@@ -1,12 +1,18 @@
-import product_, print_, sell_
 import os
+import sys
+import product_
+import print_
+import sell_
+import common_
+
 if __name__=='__main__':
 
+    common_class = common_.Common()
     product_class = product_.Product()
     print_class = print_.Print_class()
     sell_class = sell_.Sell()
     while(1):
-        os.system('cls')
+        common_class.platformFunction()
         print_class.menu_print()
         select_menu = input("select POS menu : ")
         if(select_menu == "1"):
@@ -14,26 +20,26 @@ if __name__=='__main__':
                 print_class.add_menu_print()
                 select_detail = input("select Register-detail : ")
                 if(select_detail=="1"):
-                    os.system('cls')
+                    common_class.platformFunction()
                     product_name = input("Product name : ")
                     product_price = int(input("Set to product price :"))
                     product_class.add_info(product_name, product_price)
                 elif(select_detail== "2"):
-                    os.system('cls')
+                    common_class.platformFunction()
                     product_class.print_info()
                     os.system('pause')
                 elif(select_detail == "3"):
                     select_index = int(input("select delete index : "))
                     product_class.delete_info(select_index)
                 elif(select_detail == "4"):
-                    os.system('cls')
+                    common_class.platformFunction()
                     product_class.update_info()
                     print("Updated Proudct list!! ")
                     os.system('pause')
                 elif(select_detail == "5"):
                     break
         elif(select_menu == "2"):
-            os.system('cls')
+            common_class.platformFunction()
             while(1):
                 print_class.sell_menu_print()
                 select_sell = input("Select Sell menu :")
