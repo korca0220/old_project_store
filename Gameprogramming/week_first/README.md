@@ -14,6 +14,7 @@
 
 ![이미지](D:\Storage\프로그래밍\junesystem\Gameprogramming\week_first\Main.jpg)
 - 모듈은 크게 3가지로 구분 ** _main.py, setting.py, sprites.py_ **
+        
         main.py -> 게임을 실행시키는 전체적인 코드가 들어감(init, run, new, draw...)
         setting.py -> 상수값 설정 및 DEFINE 설정
         sprites.py -> Class 들에 대한 설정 및 정의(Player, Platform...)
