@@ -1,4 +1,4 @@
-<h1>** GameProgramming **
+<h1> GameProgramming
 
 # 2주차 #
 - 진행사항
