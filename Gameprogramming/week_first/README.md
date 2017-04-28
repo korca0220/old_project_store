@@ -1,4 +1,4 @@
-<h1> GameProgramming 
+<h1> **GameProgramming** 
 
 # 1주차 #
 - 개발환경
@@ -28,7 +28,7 @@ from settings import *
 from sprites import *
 ```
 
-## Main 메서드##
+## Main 메서드 ##
 ```python
 class Game:
     def __init__(self): #변수, 게임 기본설정 초기화
