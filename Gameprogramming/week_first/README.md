@@ -1,4 +1,4 @@
-<h1> **GameProgramming** 
+<h1> GameProgramming 
 
 # 1주차 #
 - 개발환경
