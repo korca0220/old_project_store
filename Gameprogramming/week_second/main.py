@@ -18,11 +18,12 @@ class Game:
     def new(self):
         # start a new game
         self.all_sprites = pg.sprite.Group()
-        self.platforms = pg.sprite.Group()
-        self.player = Player(self)
+        self.platforms = pg.sprite.Group() #platforms(블록) sprites 그룹 생성
+        self.player = Player(self) #self.player, Player객체 생성
         self.all_sprites.add(self.player)
+        #PLATFORM_LIST에서 각 value값을 받아와 객체 생성
         for plat in PLATFORM_LIST:
-            p = Platform(*plat)
+            p = Platform(*plat) #python에서 *은 point가 아닌 리스트 언패킹
             self.all_sprites.add(p)
             self.platforms.add(p)
         self.run()
@@ -41,9 +42,11 @@ class Game:
         #game loop - update
         self.all_sprites.update()
         if self.player.vel.y > 0:
+            #hits -> spritecollide 메서드를 이용(x,y, default boolean)충돌 체크
             hits = pg.sprite.spritecollide(self.player, self.platforms, False)
             if hits:
-                self.player.pos.y = hits[0].rect.top
+                self.player.pos.y = hits[0].rect.top #충돌시 player의 Y축 위치값이 충돌한 블록의 TOP값으로
+                                                     #즉, 블록위에 있는 것처럼 보이게함
                 self.player.vel.y = 0
 
     def events(self):
@@ -53,10 +56,12 @@ class Game:
                 if self.playing:
                     self.playing = False
                 self.running = False
+            #점프 구현
             if event.type == pg.KEYDOWN:
-                if event.key == pg.K_x and self.count <2:
+                if event.key == pg.K_x and self.count <2: #count값을 두어 최대 2단 점프
                     self.count += 1
                     self.player.jump()
+                #2번 점프하고 바닥과의 충돌이 발생하면 count값을 다시 0으로 둠
                 elif pg.sprite.spritecollide(self.player, self.platforms, False):
                     self.count = 0
 

@@ -20,7 +20,7 @@ class Player(pg.sprite.Sprite):
         self.vel.y = -10
 
     def update(self):
-        self.acc = vec(0, PLAYER_GRAV)
+        self.acc = vec(0, PLAYER_GRAV)#가속값 -> X는 0이고 Y는 중력이 적용
         keys = pg.key.get_pressed()
         if keys[pg.K_LEFT]:
             self.acc.x = -PLAYER_ACC
@@ -28,7 +28,7 @@ class Player(pg.sprite.Sprite):
             self.acc.x = PLAYER_ACC
 
         # apply friction
-        self.acc.x += self.vel.x * PLAYER_FRICTION
+        self.acc.x += self.vel.x * PLAYER_FRICTION #X에만 마찰력이 적용됨 (Y는 중력 적용)
 
         #equations of motion
         self.vel += self.acc
@@ -41,7 +41,7 @@ class Player(pg.sprite.Sprite):
         if self.pos.x < 0:
             self.pos.x = WIDTH
 
-        self.rect.midbottom = self.pos
+        self.rect.midbottom = self.pos 
 
 class Platform(pg.sprite.Sprite):
     def __init__(self, x, y, w, h):
