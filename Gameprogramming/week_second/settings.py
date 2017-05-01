@@ -5,8 +5,8 @@ HEIGHT = 512
 FPS = 60
 
 #Player properties
-PLAYER_ACC = 0.5
-PLAYER_FRICTION = -0.12
+PLAYER_ACC = 0.35
+PLAYER_FRICTION = -0.08
 PLAYER_GRAV = 0.5
 
 # Starting platforms

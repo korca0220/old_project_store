@@ -2,7 +2,8 @@ import random
 import pygame as pg
 from settings import *
 from sprites import *
-myImg = pg.image.load('D:\Storage\프로그래밍\junesystem\Python\pygame\Gamepro\week_first\Image\city_image.jpg')
+myImg = pg.image.load('D:\Storage\Study\junesystem\Gameprogramming\week_second\Image\city_image.jpg')
+
 class Game:
     def __init__(self):
         # initialize game window, etc
@@ -45,9 +46,14 @@ class Game:
             #hits -> spritecollide 메서드를 이용(x,y, default boolean)충돌 체크
             hits = pg.sprite.spritecollide(self.player, self.platforms, False)
             if hits:
-                self.player.pos.y = hits[0].rect.top #충돌시 player의 Y축 위치값이 충돌한 블록의 TOP값으로
-                                                     #즉, 블록위에 있는 것처럼 보이게함
+                self.player.pos.y = hits[0].rect.top + 1  #충돌시 player의 Y축 위치값이 충돌한 블록의 TOP값으로
+                                                            #즉, 블록위에 있는 것처럼 보이게함
                 self.player.vel.y = 0
+
+            elif self.player.rect.midtop == self.platforms:
+                self.player.pos.y = hits[0].rect.bottom - 1
+                self.player.vel.y = 10
+
 
     def events(self):
         #game loop - events
