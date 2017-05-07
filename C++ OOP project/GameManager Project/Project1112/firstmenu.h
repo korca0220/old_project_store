@@ -3,10 +3,11 @@
 class firstmenu
 {
 private:
-	int player;
-	int selectplayer;
-	int realMoney;
-	int gamecount;
+	int player; // Player 
+	int selectplayer; //Player를 선택하는 변수
+	int realMoney; //실제 게임에서 활용되는 돈
+	int gamecount; //게임 생성개수 체크를위한 변수(다형성 사용 test)
+
 public:
 	int mainmenu(); //1번. 메인메뉴를 띄워주고 선택한 메뉴값 반환하는 함수
 	int personselect(); //2번. 원하는만큼 플레이어 생성 및 선택한 플레이어의 배열번호 반환

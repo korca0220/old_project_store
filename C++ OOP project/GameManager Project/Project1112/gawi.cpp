@@ -7,7 +7,7 @@
 using namespace std;
 gamemoney GM;
 
-void gawi::gawiPrint(int pp)
+void gawi::gawiPrint(int pp) //가위바위보 메뉴 출력
 {
 	cout << "[[ 소지금액 : " << GM.money(0, pp - 1) << " ]]" << endl;
 	cout << "     당신은 ★ " << count << " ★ 연승중!" << endl;
@@ -21,7 +21,7 @@ void gawi::gawiPrint(int pp)
 	cout << "│가위, 바위, 보 중 숫자를 입력하세요!! │" << endl;
 	cout << "└───────────────────┘" << endl;
 }
-int gawi::money(int a, int b)
+int gawi::money(int a, int b) //가위바위보 게임에서 돈의 흐름
 {
 	int i, c;
 	c = a;
@@ -30,7 +30,7 @@ int gawi::money(int a, int b)
 
 	return c;
 }
-int gawi::run(int p)
+int gawi::run(int p) //실제 게임 진행
 {
 	count = 0;
 	if (GM.money(0, p - 1) < 1000)
@@ -39,12 +39,12 @@ int gawi::run(int p)
 	}
 	while (1)
 	{
-	GAWI:
+	GAWI: //goto 분기점
 		gawiPrint(p);
-		srand((unsigned)time(NULL));
+		srand((unsigned)time(NULL)); //랜덤변수 이용
 
 		cin >> user;
-		if (GM.money(0, p - 1) < 1000)
+		if (GM.money(0, p - 1) < 1000) //소지금 체크
 		{
 			system("cls");
 			cout << "소지금이 부족하므로 게임에 참가하실수 없습니다. 메인메뉴로 돌아갑니다." << endl;
@@ -53,7 +53,7 @@ int gawi::run(int p)
 			system("cls");
 			return 0;
 		}
-		switch (user)
+		switch (user) //가위바위보 게임에 대한 경우의 수를 이용
 		{
 		case 1:
 			GM.money(-500, p - 1);
@@ -67,7 +67,7 @@ int gawi::run(int p)
 			GM.money(-500, p - 1);
 			cout << "보";
 			break;
-		case 4:
+		case 4: //게임 승수에 대한 환전 
 			if (count == 1)
 			{
 				GM.money(500, p - 1);
@@ -91,7 +91,7 @@ int gawi::run(int p)
 		cout << "\n컴퓨터:";
 
 		com = (rand() % 3) + 1;
-		switch (com)
+		switch (com) //컴퓨터는 가위,바위,보 셋중에 랜덤으로 하나를 내게 됨
 		{
 		case 1:
 			cout << "가위";
@@ -105,7 +105,7 @@ int gawi::run(int p)
 		}
 		cout << endl;
 
-		if (com == user)
+		if (com == user) // 컴퓨터와 유저를 비교, 승패 체크
 		{
 			cout << "Draw game" << endl;
 		}
