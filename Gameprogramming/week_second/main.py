@@ -2,7 +2,7 @@ import random
 import pygame as pg
 from settings import *
 from sprites import *
-myImg = pg.image.load('D:\Storage\Study\junesystem\Gameprogramming\week_second\Image\city_image.jpg')
+myImg = pg.image.load('D:\Storage\Study\Junewoo\Gameprogramming\week_second\Image\city_image.jpg')
 
 class Game:
     def __init__(self):
