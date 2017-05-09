@@ -1,8 +1,9 @@
 #base properties
 BACKGORUND = 'Image\city_image.jpg'
+BOX = 'Image\Moon.png'
 TITLE = "My game"
 WIDTH = 512
-HEIGHT = 800
+HEIGHT = 600
 FPS = 60
 FONT_NAME = 'arial'
 
@@ -27,3 +28,15 @@ GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
 YELLOW = (255 ,255 ,0)
 WHITE_A = (255, 255, 255, 180)
+
+#Music
+MUSIC_DICT = {'Catching' :'Music\Catching the beat.mp3',
+              'CountingStar' :'Music\Counting Star.mp3',
+              'Fight':'Music\Fight.mp3',
+              'Flaming' : 'Music\Flaming.mp3',
+              'Start' : 'Music\Start.mp3',
+              'Summer' : 'Music\Summer_Break.mp3'
+              }
+MUSIC_LIST = ['Catching', 'CountingStar', 'Fight', 'Flaming', 'Start', 'Summer']
+
+

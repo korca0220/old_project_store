@@ -8,6 +8,7 @@ from sprites import *
 myImg = os.path.join(os.path.abspath(BACKGORUND))
 gameImg = pg.image.load(myImg)
 
+
 class Game:
     def __init__(self):
         # initialize game window, etc
@@ -99,20 +100,25 @@ class Game:
                 elif pg.sprite.spritecollide(self.player, self.platforms, False):
                     self.count = 0
 
+    #음악 재생 컨트롤러
+    def music(self):
+        myMusic = os.path.join(os.path.abspath(MUSIC_DICT[random.choice(MUSIC_LIST)]))
+        pg.mixer.music.load(myMusic)
+        pg.mixer.music.play(0)
 
     def draw(self):
         #game loop - draw
         self.screen.fill(BLACK)
         self.screen.blit(gameImg, (1,1))
         self.all_sprites.draw(self.screen)
-        self.draw_text(str(self.score), 22, WHITE, WIDTH-20, 15)
+        self.draw_text('Score :' +str(self.score), 22, WHITE, WIDTH-50, 15)
         pg.display.update()
 
     def show_start_screen(self):
         #GAME START시에 나타낼 스크린
         self.screen.fill(BLUE)
         self.draw_text(TITLE, 48, WHITE, WIDTH/2, HEIGHT/4)
-        self.draw_text("Arrow to move, ALT to jump", 22, WHITE, WIDTH/2, HEIGHT/2)
+        self.draw_text("Arrow to move, X to jump", 22, WHITE, WIDTH/2, HEIGHT/2)
         self.draw_text("Press a key to play", 22, WHITE, WIDTH/2, HEIGHT*3/4)
         pg.display.update()
         self.wait_for_key()
@@ -150,12 +156,13 @@ class Game:
         text_rect = text_surface.get_rect()
         text_rect.midtop = (x, y)
         self.screen.blit(text_surface, text_rect)
-
+        #render(text, antialias, color, background=None) -> Surface
 
 
 g = Game()
 g. show_start_screen()
 while g.running:
+    g.music()
     g.new()
     g.show_over_screen()
 
