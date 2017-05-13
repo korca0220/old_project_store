@@ -94,6 +94,7 @@ class Game:
             #점프 구현
             if event.type == pg.KEYDOWN:
                 if event.key == pg.K_x and self.count <2: #count값을 두어 최대 2단 점프
+
                     self.count += 1
                     self.player.jump()
                 #2번 점프하고 바닥과의 충돌이 발생하면 count값을 다시 0으로 둠
