@@ -5,8 +5,10 @@ from settings import *
 from sprites import *
 
 
-myImg = os.path.join(os.path.abspath(BACKGORUND))
+myImg = os.path.join(os.path.abspath(BACKGROUND))
+myImg2 = os.path.join(os.path.abspath(BACKGROUND2))
 gameImg = pg.image.load(myImg)
+gameImg2 = pg.image.load(myImg2)
 
 
 class Game:
@@ -20,6 +22,10 @@ class Game:
         self.running = True #게임 실행 Boolean 값
         self.count = 0 #점프 카운트 값
         self.font_name = pg.font.match_font(FONT_NAME) #FONT_NMAE과 맞는 폰트를 검색
+        self.x=0
+        self.x1 = WIDTH
+        self.frame_count = 0
+
 
 
     def new(self):
@@ -53,12 +59,12 @@ class Game:
             #hits -> spritecollide 메서드를 이용(x,y, default boolean)충돌 체크
             hits = pg.sprite.spritecollide(self.player, self.platforms, False)
             if hits:
-                self.player.pos.y = hits[0].rect.top #충돌시 player의 Y축 위치값이 충돌한 블록의 TOP값으로
+                self.player.pos.y = hits[0].rect.top+1 #충돌시 player의 Y축 위치값이 충돌한 블록의 TOP값으로
                                                      #즉, 블록위에 있는 것처럼 보이게함
                 self.player.vel.y = 0
 
         # player 위치가 1/2(스크린) 이상 왔을 떄
-        if self.player.rect.top <= HEIGHT / 2:
+        if self.player.rect.top <= HEIGHT / 1.5:
             self.player.pos.y += abs(self.player.vel.y)
             for plat in self.platforms:
                 plat.rect.y += abs(self.player.vel.y)
@@ -67,9 +73,9 @@ class Game:
                     self.score += 10
         #블록 재생성
         while len(self.platforms) < 6:
-            width = random.randrange(50, 150)
+            width = random.randrange(50, 200)
             p = Platform(random.randrange(0, WIDTH-width),
-                         random.randrange(-75, -30),
+                         random.randrange(20, 60),
                          width, 20)
             self.platforms.add(p)
             self.all_sprites.add(p)
@@ -91,12 +97,11 @@ class Game:
                 if self.playing:
                     self.playing = False
                 self.running = False
-            #점프 구현
+            #점프
             if event.type == pg.KEYDOWN:
-                if event.key == pg.K_x and self.count <2: #count값을 두어 최대 2단 점프
+                if event.key == pg.K_x and self.count <2:
                     self.count += 1
                     self.player.jump()
-                #2번 점프하고 바닥과의 충돌이 발생하면 count값을 다시 0으로 둠
                 elif pg.sprite.spritecollide(self.player, self.platforms, False):
                     self.count = 0
 
@@ -106,10 +111,17 @@ class Game:
         pg.mixer.music.load(myMusic)
         pg.mixer.music.play(0)
 
+
     def draw(self):
         #game loop - draw
-        self.screen.fill(BLACK)
-        self.screen.blit(gameImg, (1,1))
+        self.x1 -= 2
+        self.x -= 2
+        self.screen.blit(gameImg2, (self.x, 0))
+        self.screen.blit(gameImg, (self.x1, 0))
+        if self.x == -WIDTH:
+            self.x = WIDTH
+        if self.x1 == -WIDTH:
+            self.x1 = WIDTH
         self.all_sprites.draw(self.screen)
         self.draw_text('Score :' +str(self.score), 22, WHITE, WIDTH-50, 15)
         pg.display.update()
