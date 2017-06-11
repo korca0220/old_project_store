@@ -60,10 +60,15 @@ class Game:
             #hits -> spritecollide 메서드를 이용(x,y, default boolean)충돌 체크
             hits = pg.sprite.spritecollide(self.player, self.platforms, False)
             if hits:
-                self.player.pos.y = hits[0].rect.top+1 #충돌시 player의 Y축 위치값이 충돌한 블록의 TOP값으로
-                                                     #즉, 블록위에 있는 것처럼 보이게함
-                self.player.vel.y = 0
-                self.player.jumping = False
+                lowest = hits[0]
+                for hit in hits:
+                    if hit.rect.bottom > lowest.rect.bottom:
+                        lowest = hit
+                if self.player.pos.y < lowest.rect.bottom:
+                    self.player.pos.y = lowest.rect.top+1 #충돌시 player의 Y축 위치값이 충돌한 블록의 TOP값으로
+                                                         #즉, 블록위에 있는 것처럼 보이게함
+                    self.player.vel.y = 0
+                    self.player.jumping = False
 
         #적 생성
         while len(self.enemys) < 8:
