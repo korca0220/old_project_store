@@ -2,7 +2,7 @@ import random
 import pygame as pg
 from settings import *
 from sprites import *
-myImg = pg.image.load('D:\Storage\Study\Python\pygame\Gamepro\week_first\Image\city_image.jpg')
+
 class Game:
     def __init__(self):
         # initialize game window, etc
@@ -47,7 +47,6 @@ class Game:
     def draw(self):
         #game loop - draw
         self.screen.fill(BLACK)
-        self.screen.blit(myImg, (1,1))
         self.all_sprites.draw(self.screen)
         pg.display.update()
 

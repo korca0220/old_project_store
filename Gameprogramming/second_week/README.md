@@ -6,7 +6,7 @@
 
 ## 진행사항 ##
 
-**Platform(블록) 개체 구현**
+**Platform(블록) 클래스 구현**
 ```python
 class Platform(pg.sprite.Sprite):
     def __init__(self, x, y, w, h):
