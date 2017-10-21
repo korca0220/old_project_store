@@ -1,0 +1,69 @@
+{% load static %}
+<!doctype html>
+<html>
+<head>
+ <meta charset="utf-8" />
+ <title>June Site</title>
+ <!-- 기본 bootstrap -->
+ {# <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" /> #}
+ <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.7/darkly/bootstrap.min.css">
+ <!-- bootstrap: cosmo theme -->
+ <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cosmo/bootstrap.min.css" /> -->
+ <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
+ <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+ <!--[if lt IE 9]>
+ <script src="//oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+ <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+ <![endif]-->
+  <link rel="stylesheet" href="{% static "style.css" %}"/>
+</head>
+<body>
+<script id="dsq-count-scr" src="//junejune2.disqus.com/count.js" async></script>
+ <nav class="navbar navbar-default">
+ <div class="container">
+ <div class="navbar-header">
+ <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+ <span class="icon-bar"></span>
+ <span class="icon-bar"></span>
+ <span class="icon-bar"></span>
+ </button>
+ <a class="navbar-brand" href="#">JuneSite</a>
+ </div>
+ <div id="navbar" class="collapse navbar-collapse">
+ <ul class="nav navbar-nav">
+ <li><a href="{% url 'home' %}">Home</a></li>
+ <li><a href="{% url 'blog:post_list' %}">Post</a></li>
+<li><a href="{% url "photo:photo_list" %}">Photo</a></li>
+ </ul>
+ <ul class="nav navbar-nav navbar-right">
+  {% if not user.is_authenticated %}
+    <li><a href="{% url "signup" %}">회원가입</a></li>
+    <li><a href="{% url "login" %}?next={{ request.path }}">로그인</a></li>
+  {% else %}
+    <li><a href="{% url "logout" %}?next={{ request.path }}">로그아웃</a></li>
+    <li><a href="{% url 'profile' %}">{{ user }}</a><li>
+  {% endif %}
+ <li><a href="{% url 'admin:index' %}">Admin</a></li>
+ </ul>
+ </div>
+ </div>
+ </nav>
+
+
+ {% if messages %}
+ <div class="container">
+     {% for message in messages %}
+     <div class="alert alert-{{ message.tags }}">
+        [{{ message.tags }}] {# 메세지 레벨 #}
+        {{ message.message }} {# 실제 메세지 내용 #}
+      </div>
+      {% endfor %}
+    </div>
+ {% endif %}
+
+ {% block content %}
+ {% endblock %}
+
+</body>
+</html>

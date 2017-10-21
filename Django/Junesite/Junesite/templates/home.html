@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+<div class="jumbotron">
+<h1>Django Framework <sup>by June</sup></h1>
+<p>
+<a class="btn btn-lg btn-primary" href="https://github.com/korca0220/korca0220.github.com" target="_blank">
+Github page &raquo; </a>
+<a class="btn btn-lg btn-primary" href="http://blog.naver.com/korca02220" target="_blank">
+Blog page &raquo; </a>
+</p>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <div class="alert alert-info">
+      <ul>
+          <li>해당 웹은 Django로 제작 되었습니다.</li>
+      </ul>
+  </div>
+  <img src="{% static 'hello_world2.gif' %}" style="height:50%;"/></a>
+  <ul>
+    <div>
+      {% load disqus_tags %}
+      {% disqus_show_comments %}
+    </div>
+  </ul>
+  </div>
+</div>
+{% endblock %}

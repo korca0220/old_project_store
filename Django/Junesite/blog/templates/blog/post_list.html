@@ -1,0 +1,50 @@
+{% extends "blog/layout.html" %}
+
+{% load disqus_tags %}
+{% block content %}
+<div class="container">
+<div class="jumbotron">
+<div class="row">
+  <div class="col-sm-12">
+  <div class="alert alert-success">
+    <ul>
+        <p> <font size="18">Blog Post Page </font><sub>단순 게시물 포스팅</sub></p>
+    </ul>
+</div>
+  <div class="col-sm-12">
+  <a href="{% url "blog:post_new" %}" class="btn btn-primary pull-right">New Post</a>
+    <p>
+    <form action ="" method="get">
+      <input type="text" name="q", value="{{ q }}"/>
+      <input type="submit" value="검색" class="btn btn-primary"/>
+    </form>
+  </p>
+    <table class="table table-hover table-boardered">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Tag</th>
+          <th>Author</th>
+          <th>Updated</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for post in post_list %}
+          <tr>
+            <td><a href="{% url "blog:post_detail" post.id %}">{{ post.title }}</a></td>
+            <td>{% for tag in post.tag_set.all %}
+              <span class="label label-info">{{ tag.name }}</span>
+            {% endfor %}</td>
+            <td>by {{ post.user }}</td>
+            <td><small>at {{ post.updated_at }}</small></td>
+            <td>{{ post.status }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

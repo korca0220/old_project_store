@@ -1,0 +1,23 @@
+{% load bootstrap3 %}
+
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <h1>Photo Form</h1>
+      <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        <input type="submit" class="btn btn-primary" value="개시"/>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  var dom = document.getElementById('{{ form.user_agent.id_for_label }}');
+  dom.value = navigator.userAgent;
+</script>
