@@ -1,6 +1,6 @@
 
 # Python Study - 1
-###Python?###
+### Python?
 *** 컴파일러 언어 개발 과정*** <br/>
 
 ---
