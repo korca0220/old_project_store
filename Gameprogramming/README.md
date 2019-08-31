@@ -56,3 +56,6 @@ Steam - Aseprite
 
 **참고한 영상**
 https://www.youtube.com/playlist?list=PLsk-HSGFjnaH5yghzu7PcOzm9NhsW0Urw
+
+**게임 진행영상**
+https://www.youtube.com/playlist?list=PL2NfXLhxGS5ZnMxWsZIpLgmk9lyzC_aFj
