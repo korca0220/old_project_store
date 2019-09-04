@@ -1,0 +1,1456 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>870</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="mouseTracking">
+   <bool>false</bool>
+  </property>
+  <property name="windowTitle">
+   <string>LP_ListCheckUp_V3.0</string>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background : rgb(255, 255, 255)</string>
+  </property>
+  <property name="sizeGripEnabled">
+   <bool>false</bool>
+  </property>
+  <property name="modal">
+   <bool>false</bool>
+  </property>
+  <widget class="QComboBox" name="comboBox">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>30</y>
+     <width>101</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>현대하모니 B</family>
+    </font>
+   </property>
+   <property name="editable">
+    <bool>false</bool>
+   </property>
+   <item>
+    <property name="text">
+     <string>KOK</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>USA</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>EUR</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>15</x>
+     <y>20</y>
+     <width>41</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>현대하모니 B</family>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::RightToLeft</enum>
+   </property>
+   <property name="text">
+    <string>향지</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="sdcardButton">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>180</y>
+     <width>130</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>현대하모니 B</family>
+    </font>
+   </property>
+   <property name="text">
+    <string>SD Card 목록 로드</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="exitButton">
+   <property name="geometry">
+    <rect>
+     <x>660</x>
+     <y>830</y>
+     <width>131</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>현대하모니 B</family>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>종료</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="sdcardButton_2">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>180</y>
+     <width>90</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>현대하모니 B</family>
+    </font>
+   </property>
+   <property name="text">
+    <string>체크</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="nandButton">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>270</y>
+     <width>130</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>현대하모니 B</family>
+    </font>
+   </property>
+   <property name="text">
+    <string>NAND/DB 목록 로드</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="nandButton_2">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>270</y>
+     <width>90</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>현대하모니 B</family>
+    </font>
+   </property>
+   <property name="text">
+    <string>체크</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="iniButton">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>360</y>
+     <width>130</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>현대하모니 B</family>
+    </font>
+   </property>
+   <property name="text">
+    <string>INI/TTS 목록 로드</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="iniButton_2">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>360</y>
+     <width>90</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>현대하모니 B</family>
+    </font>
+   </property>
+   <property name="text">
+    <string>체크</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>10</y>
+     <width>61</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>현대하모니 B</family>
+    </font>
+   </property>
+   <property name="text">
+    <string>FileName</string>
+   </property>
+  </widget>
+  <widget class="QTableWidget" name="tableWidget">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>30</y>
+     <width>531</width>
+     <height>790</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>현대하모니 B</family>
+    </font>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="editTriggers">
+    <set>QAbstractItemView::NoEditTriggers</set>
+   </property>
+   <property name="selectionBehavior">
+    <enum>QAbstractItemView::SelectItems</enum>
+   </property>
+   <property name="rowCount">
+    <number>0</number>
+   </property>
+   <property name="columnCount">
+    <number>3</number>
+   </property>
+   <column>
+    <property name="text">
+     <string>File</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Check</string>
+    </property>
+    <property name="textAlignment">
+     <set>AlignLeading|AlignVCenter</set>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Lang</string>
+    </property>
+   </column>
+  </widget>
+  <widget class="QPushButton" name="loadButton">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>60</y>
+     <width>81</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>현대하모니 B</family>
+    </font>
+   </property>
+   <property name="text">
+    <string>설정</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>90</y>
+     <width>231</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>현대하모니 B</family>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>향지/플랫폼 설정을 하세요!</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="resetButton">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>430</y>
+     <width>231</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>현대하모니 B</family>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background : rgb(255, 213, 244)
+</string>
+   </property>
+   <property name="text">
+    <string>리셋</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkBox_VW">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>390</y>
+     <width>111</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>현대하모니 B</family>
+    </font>
+   </property>
+   <property name="text">
+    <string>VoiceWare TTS</string>
+   </property>
+   <property name="tristate">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="make_checklist">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>540</y>
+     <width>231</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>현대하모니 B</family>
+    </font>
+   </property>
+   <property name="text">
+    <string>체크리스트 만들기</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>125</y>
+     <width>131</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>현대하모니 B</family>
+     <pointsize>14</pointsize>
+     <weight>75</weight>
+     <italic>true</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::RightToLeft</enum>
+   </property>
+   <property name="text">
+    <string>SDcard Check</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>220</y>
+     <width>201</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>현대하모니 B</family>
+     <pointsize>14</pointsize>
+     <weight>75</weight>
+     <italic>true</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::RightToLeft</enum>
+   </property>
+   <property name="text">
+    <string>Work Check -  가변부</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="sdcard_set_button">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>150</y>
+     <width>231</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>현대하모니 B</family>
+    </font>
+   </property>
+   <property name="text">
+    <string>검사 할 디렉토리 설정</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="work_set_button_fixed">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>240</y>
+     <width>231</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>현대하모니 B</family>
+    </font>
+   </property>
+   <property name="text">
+    <string>검사 할 디렉토리 설정</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox_2">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>60</y>
+     <width>101</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>현대하모니 B</family>
+    </font>
+   </property>
+   <property name="editable">
+    <bool>false</bool>
+   </property>
+   <item>
+    <property name="text">
+     <string>AVN4</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>AVN5</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>PRM2</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>PRM5</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>PRM6</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>경제형</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>WIDE</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="label_7">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>50</y>
+     <width>51</width>
+     <height>35</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>현대하모니 B</family>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::RightToLeft</enum>
+   </property>
+   <property name="text">
+    <string>플랫폼</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="Line" name="line">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>570</y>
+     <width>241</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>현대하모니 B</family>
+    </font>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="path_select">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>510</y>
+     <width>231</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>현대하모니 B</family>
+    </font>
+   </property>
+   <property name="text">
+    <string>체크리스트 디렉토리 설정</string>
+   </property>
+  </widget>
+  <widget class="Line" name="line_2">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>460</y>
+     <width>241</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>현대하모니 B</family>
+    </font>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_9">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>480</y>
+     <width>161</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>현대하모니 B</family>
+     <pointsize>14</pointsize>
+     <weight>75</weight>
+     <italic>true</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::RightToLeft</enum>
+   </property>
+   <property name="text">
+    <string>Create Checklist</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>840</y>
+     <width>141</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>현대하모니 B</family>
+     <pointsize>11</pointsize>
+     <weight>75</weight>
+     <italic>true</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>#Team NLP Dev</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkBox_Nuance">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>390</y>
+     <width>91</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>현대하모니 B</family>
+    </font>
+   </property>
+   <property name="text">
+    <string>Nuance TTS</string>
+   </property>
+   <property name="tristate">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>590</y>
+     <width>241</width>
+     <height>231</height>
+    </rect>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background : qradialgradient(spread:reflect, cx:0.5, cy:0.494, radius:0.759, fx:0.494545, fy:0.506, stop:0.147727 rgba(241, 112, 152, 165), stop:0.738636 rgba(255, 255, 255, 255))</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QRadioButton" name="off_button">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>40</y>
+      <width>90</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>현대하모니 B</family>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background : rgba(255, 255, 255, 0)</string>
+    </property>
+    <property name="text">
+     <string>OFF</string>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>80</y>
+      <width>101</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>현대하모니 B</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::RightToLeft</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background : rgba(255, 255, 255, 0)</string>
+    </property>
+    <property name="text">
+     <string>Upload Name</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>10</y>
+      <width>111</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>현대하모니 B</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::RightToLeft</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background : rgba(255, 255, 255, 0)</string>
+    </property>
+    <property name="text">
+     <string>Server Mode</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="server_upload_button">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>140</y>
+      <width>221</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>현대하모니 B</family>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string/>
+    </property>
+    <property name="text">
+     <string>체크리스트 업로드</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="description_text">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>110</y>
+      <width>111</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>현대하모니 B</family>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background : rgba(255, 255, 255, 0)</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="server_download_button">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>170</y>
+      <width>221</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>현대하모니 B</family>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string/>
+    </property>
+    <property name="text">
+     <string>체크리스트 다운로드</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="on_button">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>40</y>
+      <width>90</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>현대하모니 B</family>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background : rgba(255, 255, 255, 0)</string>
+    </property>
+    <property name="text">
+     <string>ON</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="serverloadButton">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>200</y>
+      <width>111</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>현대하모니 B</family>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string>서버 설정 적용</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="upload_name">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>80</y>
+      <width>111</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>현대하모니 B</family>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background : rgba(255, 255, 255, 0)</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="description">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>110</y>
+      <width>101</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>현대하모니 B</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::RightToLeft</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background : rgba(255, 255, 255, 0)</string>
+    </property>
+    <property name="text">
+     <string>Description</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>310</y>
+     <width>201</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>현대하모니 B</family>
+     <pointsize>14</pointsize>
+     <weight>75</weight>
+     <italic>true</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::RightToLeft</enum>
+   </property>
+   <property name="text">
+    <string>Work Check -  고정부</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="work_set_button_dynamic">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>330</y>
+     <width>231</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>현대하모니 B</family>
+    </font>
+   </property>
+   <property name="text">
+    <string>검사 할 디렉토리 설정</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>sdcardButton</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>sdcard_slot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>149</x>
+     <y>201</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>193</x>
+     <y>58</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>exitButton</sender>
+   <signal>pressed()</signal>
+   <receiver>Dialog</receiver>
+   <slot>final_exit()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>689</x>
+     <y>830</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>366</x>
+     <y>377</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>nandButton</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>nand_slot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>87</x>
+     <y>286</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>30</x>
+     <y>240</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>iniButton</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>ini_slot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>120</x>
+     <y>385</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>44</x>
+     <y>227</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>sdcardButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>sdcard_check()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>192</x>
+     <y>203</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>194</x>
+     <y>28</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>nandButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>nand_check()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>236</x>
+     <y>287</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>240</x>
+     <y>235</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>iniButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>ini_check()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>216</x>
+     <y>393</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>112</x>
+     <y>279</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>loadButton</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>checklist_load_slot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>227</x>
+     <y>70</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>130</x>
+     <y>235</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>resetButton</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>reset_slot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>164</x>
+     <y>446</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>149</x>
+     <y>302</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tableWidget</sender>
+   <signal>cellDoubleClicked(int,int)</signal>
+   <receiver>Dialog</receiver>
+   <slot>double_click_slot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>382</x>
+     <y>42</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>462</x>
+     <y>14</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>make_checklist</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>slot_makech()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>179</x>
+     <y>557</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>173</x>
+     <y>416</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>sdcard_set_button</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>sdcard_setup()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>95</x>
+     <y>167</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>208</x>
+     <y>108</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>work_set_button_fixed</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>work_setup_dynamic()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>191</x>
+     <y>259</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>215</x>
+     <y>211</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>on_button</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>server_check()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>54</x>
+     <y>632</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>43</x>
+     <y>617</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>off_button</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>server_check()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>156</x>
+     <y>636</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>159</x>
+     <y>634</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>server_upload_button</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>checklist_upload()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>113</x>
+     <y>735</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>105</x>
+     <y>703</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>server_download_button</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>checklist_download()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>173</x>
+     <y>767</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>166</x>
+     <y>747</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>serverloadButton</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>server_load()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>152</x>
+     <y>793</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>68</x>
+     <y>789</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>path_select</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>checklist_directory_set()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>223</x>
+     <y>514</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>210</x>
+     <y>446</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>easter_egg()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>149</x>
+     <y>846</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>84</x>
+     <y>819</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>work_set_button_dynamic</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>work_setup_fixed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>58</x>
+     <y>351</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>7</x>
+     <y>399</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_VW</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>tts_check()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>43</x>
+     <y>406</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>9</x>
+     <y>461</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_Nuance</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>tts_check()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>199</x>
+     <y>408</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>18</x>
+     <y>506</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>sdcard_slot()</slot>
+  <slot>nand_slot()</slot>
+  <slot>ini_slot()</slot>
+  <slot>sdcard_check()</slot>
+  <slot>nand_check()</slot>
+  <slot>ini_check()</slot>
+  <slot>checklist_load_slot()</slot>
+  <slot>reset_slot()</slot>
+  <slot>double_click_slot()</slot>
+  <slot>slot_makech()</slot>
+  <slot>VW_checked()</slot>
+  <slot>Nuance_checked()</slot>
+  <slot>sdcard_setup()</slot>
+  <slot>work_setup_fixed()</slot>
+  <slot>server_check()</slot>
+  <slot>checklist_upload()</slot>
+  <slot>usa_lang_check()</slot>
+  <slot>eur_lang_check()</slot>
+  <slot>checklist_download()</slot>
+  <slot>server_load()</slot>
+  <slot>checklist_directory_set()</slot>
+  <slot>easter_egg()</slot>
+  <slot>work_setup_dynamic()</slot>
+  <slot>tts_check()</slot>
+  <slot>final_exit()</slot>
+ </slots>
+</ui>

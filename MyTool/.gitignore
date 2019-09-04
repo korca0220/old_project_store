@@ -1,0 +1,9 @@
+##ETC##
+*.bat
+*.pptx
+*.spec
+CheckList_*.txt
+/ctxverify/tool
+/batch/config/source/config.ini
+/Sound
+/LM Tool/_SLM
