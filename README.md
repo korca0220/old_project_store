@@ -6,6 +6,5 @@
 - Python - Gmaeprogramming - Finding the rabbit 주차별 진행
 - Django - Web서버 게시판 페이지
 - MachineLearning - 가상 화폐 시장 예측 - bitcollector
-- Tool - 기타 Tool 이것저것 개발 소스 (python)
 
  ####  자세한 사항은 각 프로젝트별 README를 읽어주세요.
